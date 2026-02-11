@@ -1,0 +1,10 @@
+source,target,value
+Department A,Project 1,50
+Department A,Project 2,30
+Department B,Project 1,40
+Department B,Project 3,25
+Department C,Project 2,20
+Department C,Project 3,35
+Project 1,Output,90
+Project 2,Output,50
+Project 3,Output,60

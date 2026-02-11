@@ -1,0 +1,127 @@
+---
+title: "Getting Started with SankeyDiagramGenerator"
+author: "Your Name"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Getting Started with SankeyDiagramGenerator}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Introduction
+
+The `SankeyDiagramGenerator` package provides tools to create interactive Sankey diagrams from your data. Sankey diagrams are useful for visualizing flows between different entities, such as energy flows, resource allocation, or process flows.
+
+## Installation
+
+You can install the package from source:
+
+```{r, eval=FALSE}
+# Install from local source
+install.packages("path/to/SankeyDiagramGenerator", repos = NULL, type = "source")
+
+# Or using devtools
+devtools::install_local("path/to/SankeyDiagramGenerator")
+```
+
+## Basic Usage
+
+### Creating a Simple Sankey Diagram
+
+```{r, eval=FALSE}
+library(SankeyDiagramGenerator)
+
+# Create sample data
+data <- data.frame(
+  source = c("A", "A", "B", "B", "C"),
+  target = c("B", "C", "D", "E", "E"),
+  value = c(10, 5, 8, 3, 7)
+)
+
+# Create Sankey diagram
+diagram <- create_sankey(data, title = "My Flow Diagram")
+diagram
+```
+
+### Loading Data from CSV
+
+```{r, eval=FALSE}
+# Load data from a CSV file
+csv_data <- load_data_from_csv("path/to/your/data.csv")
+
+# Create diagram
+diagram <- create_sankey(csv_data)
+diagram
+```
+
+### Using Sample Data
+
+The package includes sample datasets:
+
+```{r, eval=FALSE}
+# Get path to sample data
+sample_file <- system.file("extdata", "sample_energy_flow.csv", 
+                          package = "SankeyDiagramGenerator")
+
+# Load and visualize
+energy_data <- load_data_from_csv(sample_file)
+energy_diagram <- create_sankey(energy_data, title = "Energy Flow")
+energy_diagram
+```
+
+## Data Format
+
+Your data should have three columns:
+
+- `source`: The starting node of the flow
+- `target`: The ending node of the flow
+- `value`: The magnitude of the flow (numeric)
+
+Example:
+
+```
+source,target,value
+A,B,10
+A,C,5
+B,D,8
+```
+
+## Advanced Options
+
+You can customize the appearance of your Sankey diagram:
+
+```{r, eval=FALSE}
+diagram <- create_sankey(
+  data,
+  title = "Custom Diagram",
+  font_size = 14,
+  node_width = 20
+)
+```
+
+## Preparing Data Manually
+
+If you need more control, you can prepare your data separately:
+
+```{r, eval=FALSE}
+# Prepare data
+prepared <- prepare_sankey_data(data)
+
+# Inspect the structure
+str(prepared)
+
+# Create diagram
+diagram <- create_sankey(prepared)
+```
+
+## Conclusion
+
+The `SankeyDiagramGenerator` package makes it easy to create beautiful, interactive Sankey diagrams from your data. Experiment with different datasets and customization options to create the perfect visualization for your needs.

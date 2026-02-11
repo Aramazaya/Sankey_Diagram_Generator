@@ -1,0 +1,23 @@
+Package: SankeyDiagramGenerator
+Type: Package
+Title: Generate Sankey Diagrams from Data
+Version: 0.1.0
+Authors@R: person("First", "Last", email = "your.email@example.com", role = c("aut", "cre"))
+Description: A package for generating Sankey diagrams from various data sources.
+    This package provides functions to create interactive and static Sankey diagrams
+    to visualize flow relationships between different entities.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.0.0
+Depends: 
+    R (>= 3.5.0)
+Imports:
+    networkD3,
+    dplyr,
+    tidyr
+Suggests: 
+    testthat (>= 3.0.0),
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

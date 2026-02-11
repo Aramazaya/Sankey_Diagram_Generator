@@ -1,0 +1,12 @@
+source,target,value
+Energy,Electricity,100
+Energy,Gas,50
+Energy,Oil,30
+Electricity,Residential,40
+Electricity,Commercial,35
+Electricity,Industrial,25
+Gas,Residential,20
+Gas,Commercial,15
+Gas,Industrial,15
+Oil,Transportation,25
+Oil,Industrial,5
